@@ -262,3 +262,61 @@ footer { background: var(--deep); color: var(--paper); padding: 90px 0 36px; }
   .footer-bottom { flex-direction: column; gap: 10px; align-items: flex-start; }
   .hero h1 { font-size: 44px; }
 }
+
+/* =============================================
+   v3.1 — Motion, depth & background texture
+   (restrained, honours the "quiet" brief)
+   ============================================= */
+
+:root {
+  --shadow-soft: 0 2px 8px rgba(11,58,35,0.05), 0 10px 30px rgba(11,58,35,0.07);
+  --shadow-lift: 0 8px 20px rgba(11,58,35,0.10), 0 24px 60px rgba(11,58,35,0.14);
+}
+
+/* faint film grain across everything */
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* whisper-soft warm gradient on the paper base */
+body { background: linear-gradient(180deg, #f1efec 0%, var(--paper) 38%, #e9e6e1 100%); background-attachment: fixed; }
+
+/* soft breathing green glow in dark sections */
+section.deep, section.forest, .page-hero { position: relative; overflow: hidden; }
+section.deep::before, section.forest::before, .page-hero::after {
+  content: ''; position: absolute; width: 900px; height: 900px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,170,69,0.16) 0%, transparent 60%);
+  top: -300px; right: -200px; pointer-events: none; z-index: 0;
+  animation: breathe 9s ease-in-out infinite;
+}
+section.forest::before { background: radial-gradient(circle, rgba(0,170,69,0.12) 0%, transparent 60%); left: -250px; right: auto; top: auto; bottom: -300px; }
+section.deep .wrap, section.forest .wrap { position: relative; z-index: 1; }
+@keyframes breathe { 0%,100% { transform: scale(1); opacity: 0.7; } 50% { transform: scale(1.12); opacity: 1; } }
+
+/* hero soft glow behind motif */
+.hero::after { content:''; position:absolute; top:6%; right:-4%; width:680px; height:680px; border-radius:50%; background: radial-gradient(circle, rgba(0,170,69,0.10) 0%, transparent 62%); pointer-events:none; z-index:0; }
+
+/* elevation + depth */
+nav { transition: box-shadow .3s, background .3s, height .3s; }
+nav.scrolled { box-shadow: var(--shadow-soft); }
+.media { box-shadow: var(--shadow-lift); transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s; transform-style: preserve-3d; will-change: transform; }
+.form-card { box-shadow: var(--shadow-soft); }
+.statstrip { transition: box-shadow .4s; }
+
+/* knit motif: slow parallax + breathe (set via JS transform var) */
+.hero-motif, .page-hero .motif-fill { will-change: transform; }
+
+/* ── REVEAL SYSTEM ── */
+.reveal { opacity: 0; transform: translateY(26px); filter: blur(6px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1), filter .8s ease; }
+.reveal.in { opacity: 1; transform: none; filter: blur(0); }
+.reveal-stagger > * { opacity: 0; transform: translateY(22px); filter: blur(5px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1), filter .7s ease; }
+.reveal-stagger.in > * { opacity: 1; transform: none; filter: blur(0); }
+
+/* count-up holder keeps layout stable */
+.count { font-variant-numeric: tabular-nums; }
+
+/* respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; filter: none !important; }
+}

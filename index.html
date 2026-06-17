@@ -44,9 +44,9 @@
 
   <!-- STAT STRIP -->
   <div class="statstrip"><div class="wrap">
-    <div class="statcell"><div class="num">1989</div><div class="lab">Established</div></div>
-    <div class="statcell"><div class="num">35+</div><div class="lab">Years of expertise</div></div>
-    <div class="statcell"><div class="num">20+</div><div class="lab">Export countries</div></div>
+    <div class="statcell"><div class="num"><span class="count" data-to="1989" data-from="1959">1959</span></div><div class="lab">Established</div></div>
+    <div class="statcell"><div class="num"><span class="count" data-to="35" data-from="0">0</span>+</div><div class="lab">Years of expertise</div></div>
+    <div class="statcell"><div class="num"><span class="count" data-to="20" data-from="0">0</span>+</div><div class="lab">Export countries</div></div>
     <div class="statcell"><div class="num">1</div><div class="lab">Integrated roof</div></div>
   </div></div>
 
@@ -160,6 +160,56 @@
     function toggleFaq(b){const i=b.parentElement,o=i.classList.contains('open');i.parentElement.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open');}
     const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{threshold:0.15});
     document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+  </script>
+
+  <script>
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var nav = document.querySelector('nav');
+    function onScrollNav(){ if(nav){ nav.classList.toggle('scrolled', window.scrollY > 12); } }
+    window.addEventListener('scroll', onScrollNav, {passive:true}); onScrollNav();
+    if (reduce) return;
+    var sel = ['.hero .eyebrow','.hero h1','.hero-sub','.hero-actions',
+               '.statcell','.sec-head','.row','.step','.media','.quote',
+               '.faq-item','.cinfo','.form-card','.page-hero .eyebrow','.page-hero h1','.page-hero p',
+               '.split > div','.cta h2','.cta p','.cta .btn'];
+    var nodes = [];
+    sel.forEach(function(q){ document.querySelectorAll(q).forEach(function(n){ if(!n.classList.contains('reveal')){ n.classList.add('reveal'); nodes.push(n); } }); });
+    nodes.forEach(function(n){
+      var sibs = Array.prototype.filter.call(n.parentNode.children, function(c){return c.classList.contains('reveal');});
+      var idx = sibs.indexOf(n);
+      n.style.transitionDelay = (Math.min(idx,6)*0.08) + 's';
+    });
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    nodes.forEach(function(n){ io.observe(n); });
+    function countUp(el){
+      var to=+el.dataset.to, from=+(el.dataset.from||0), dur=1500, t0=null;
+      function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1); var e=1-Math.pow(1-p,3);
+        el.textContent = Math.floor(from+(to-from)*e); if(p<1) requestAnimationFrame(step); else el.textContent=to; }
+      requestAnimationFrame(step);
+    }
+    var cio = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); cio.unobserve(e.target); } });
+    }, {threshold:0.6});
+    document.querySelectorAll('.count').forEach(function(el){ cio.observe(el); });
+    var motifs = document.querySelectorAll('.hero-motif, .page-hero .motif-fill');
+    var ticking=false;
+    function parallax(){ var y=window.scrollY;
+      motifs.forEach(function(m){ var sc=1+Math.min(y/4000,0.08); m.style.transform='translateY('+(y*0.12)+'px) scale('+sc+')'; });
+      ticking=false; }
+    window.addEventListener('scroll', function(){ if(!ticking){ requestAnimationFrame(parallax); ticking=true; } }, {passive:true});
+    if (window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+      document.querySelectorAll('.media, .form-card').forEach(function(card){
+        card.style.transformStyle='preserve-3d';
+        card.addEventListener('mousemove', function(ev){ var r=card.getBoundingClientRect();
+          var px=(ev.clientX-r.left)/r.width-0.5, py=(ev.clientY-r.top)/r.height-0.5;
+          card.style.transform='perspective(900px) rotateX('+(-py*5)+'deg) rotateY('+(px*5)+'deg) translateY(-4px)'; });
+        card.addEventListener('mouseleave', function(){ card.style.transform=''; });
+      });
+    }
+  })();
   </script>
 </body>
 </html>
