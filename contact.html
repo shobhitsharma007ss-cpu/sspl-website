@@ -16,9 +16,15 @@
     <a href="index.html" class="nav-logo"><img src="mark-dark.png" alt="SSPL India"><span class="nav-word">SSPL<small>INDIA</small></span></a>
     <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQs</a></li><li><a href="contact.html" class="nav-cta active">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="faq.html">FAQs</a></li>
+      <li><a href="contact.html" class="nav-cta" class="active">Contact</a></li>
     </ul>
   </div></nav>
+
 
   <div class="page-hero">
     <div class="motif-fill motif"></div>
@@ -60,66 +66,57 @@
       </div>
     </div>
   </section>
-
   <footer><div class="wrap">
+    <div class="footer-cta">
+      <h3>Let's build something that lasts.</h3>
+      <div class="acts">
+        <a href="contact.html" class="btn btn-deep">Request a sample <span class="arr">→</span></a>
+        <a href="contact.html" class="btn btn-line" style="color:var(--deep);">Book a call <span class="arr">→</span></a>
+      </div>
+    </div>
     <div class="footer-top">
-      <div class="footer-brand"><img src="logo-light.png" alt="SSPL India"><p>Shatabdi Synthetics Pvt. Ltd. — a knitted fabric and garment manufacturer in Kanpur, India. Designed to last a century.</p></div>
-      <div class="footer-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQs</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div class="footer-col"><h5>Capabilities</h5><ul><li><a href="contact.html">Knitting</a></li><li><a href="contact.html">Dyeing &amp; Finishing</a></li><li><a href="contact.html">Garment Manufacturing</a></li><li><a href="contact.html">Job Work</a></li></ul></div>
+      <div class="footer-brand">
+        <img src="logo-light.png" alt="SSPL India">
+        <p>Shatabdi Synthetics Pvt. Ltd. — a knitted fabric and garment manufacturer in Kanpur, India. Designed to last a century.</p>
+        <iframe class="footer-map" src="https://maps.google.com/maps?q=UPSIDC+INDUSTRIAL+AREA+TEXTILE+ZONE,+ROOMA,+UTTAR+PRADESH&t=m&z=13&output=embed" loading="lazy"></iframe>
+      </div>
+      <div class="footer-col"><h5>Explore</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="products.html">Products</a></li><li><a href="services.html">Services</a></li><li><a href="blogs.html">Blogs</a></li><li><a href="faq.html">FAQs</a></li></ul></div>
+      <div class="footer-col"><h5>Capabilities</h5><ul><li><a href="services.html">Knitting</a></li><li><a href="services.html">Dyeing &amp; Finishing</a></li><li><a href="services.html">Garment Manufacturing</a></li><li><a href="services.html">Job Work</a></li></ul></div>
       <div class="footer-col"><h5>Visit / Write</h5><address>C-22-23 Textile Zone<br>UPSIDC Area, Rooma<br>Kanpur 209402, India<br><br><a href="mailto:shatabdisynthetics@gmail.com">shatabdisynthetics@gmail.com</a></address></div>
     </div>
     <div class="footer-bottom"><span>© 2025 SHATABDI SYNTHETICS PVT. LTD.</span><span>KANPUR · INDIA · EST. 1989</span></div>
   </div></footer>
-  <script>
-    function toggleMenu(){document.getElementById('navLinks').classList.toggle('open');}
-    function handleSubmit(e){e.preventDefault();const f=['name','phone','email','company','subject','message'];for(const id of f){if(!document.getElementById(id).value.trim()){alert('Please fill in all fields.');return;}}document.getElementById('contactForm').style.cssText='opacity:.4;pointer-events:none';document.getElementById('formOk').style.display='block';}
-  </script>
+  <a class="wa" href="https://wa.me/919305999465?text=Hi%20SSPL%2C%20I'd%20like%20to%20enquire%20about%20manufacturing." target="_blank" rel="noopener" aria-label="WhatsApp enquiry"><span class="tip">Enquire on WhatsApp</span><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
 
   <script>
+    function handleSubmit(e){e.preventDefault();var f=['name','phone','email','company','subject','message'];for(var i=0;i<f.length;i++){if(!document.getElementById(f[i]).value.trim()){alert('Please fill in all fields.');return;}}document.getElementById('contactForm').style.cssText='opacity:.4;pointer-events:none';document.getElementById('formOk').style.display='block';}
+  </script>
+  <script>
+    function toggleMenu(){document.getElementById('navLinks').classList.toggle('open');}
+    function toggleFaq(b){const i=b.parentElement,o=i.classList.contains('open');i.parentElement.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open');}
+  </script>
+  <script>
   (function(){
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var nav = document.querySelector('nav');
-    function onScrollNav(){ if(nav){ nav.classList.toggle('scrolled', window.scrollY > 12); } }
-    window.addEventListener('scroll', onScrollNav, {passive:true}); onScrollNav();
-    if (reduce) return;
-    var sel = ['.hero .eyebrow','.hero h1','.hero-sub','.hero-actions',
-               '.statcell','.sec-head','.row','.step','.media','.quote',
-               '.faq-item','.cinfo','.form-card','.page-hero .eyebrow','.page-hero h1','.page-hero p',
-               '.split > div','.cta h2','.cta p','.cta .btn'];
-    var nodes = [];
-    sel.forEach(function(q){ document.querySelectorAll(q).forEach(function(n){ if(!n.classList.contains('reveal')){ n.classList.add('reveal'); nodes.push(n); } }); });
-    nodes.forEach(function(n){
-      var sibs = Array.prototype.filter.call(n.parentNode.children, function(c){return c.classList.contains('reveal');});
-      var idx = sibs.indexOf(n);
-      n.style.transitionDelay = (Math.min(idx,6)*0.08) + 's';
-    });
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
-    nodes.forEach(function(n){ io.observe(n); });
-    function countUp(el){
-      var to=+el.dataset.to, from=+(el.dataset.from||0), dur=1500, t0=null;
-      function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1); var e=1-Math.pow(1-p,3);
-        el.textContent = Math.floor(from+(to-from)*e); if(p<1) requestAnimationFrame(step); else el.textContent=to; }
-      requestAnimationFrame(step);
-    }
-    var cio = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); cio.unobserve(e.target); } });
-    }, {threshold:0.6});
-    document.querySelectorAll('.count').forEach(function(el){ cio.observe(el); });
-    var motifs = document.querySelectorAll('.hero-motif, .page-hero .motif-fill');
-    var ticking=false;
-    function parallax(){ var y=window.scrollY;
-      motifs.forEach(function(m){ var sc=1+Math.min(y/4000,0.08); m.style.transform='translateY('+(y*0.12)+'px) scale('+sc+')'; });
-      ticking=false; }
-    window.addEventListener('scroll', function(){ if(!ticking){ requestAnimationFrame(parallax); ticking=true; } }, {passive:true});
-    if (window.matchMedia('(hover:hover) and (pointer:fine)').matches){
-      document.querySelectorAll('.media, .form-card').forEach(function(card){
-        card.style.transformStyle='preserve-3d';
-        card.addEventListener('mousemove', function(ev){ var r=card.getBoundingClientRect();
-          var px=(ev.clientX-r.left)/r.width-0.5, py=(ev.clientY-r.top)/r.height-0.5;
-          card.style.transform='perspective(900px) rotateX('+(-py*5)+'deg) rotateY('+(px*5)+'deg) translateY(-4px)'; });
-        card.addEventListener('mouseleave', function(){ card.style.transform=''; });
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var nav=document.querySelector('nav');
+    function ns(){if(nav)nav.classList.toggle('scrolled',window.scrollY>12);}
+    window.addEventListener('scroll',ns,{passive:true});ns();
+    if(reduce)return;
+    var sel=['.hero .eyebrow','.hero h1','.hero-sub','.hero-actions','.statcell','.sec-head','.row','.step','.media','.facts','.prod-card','.cert-card','.testi','.quote','.statement','.faq-item','.cinfo','.form-card','.page-hero .eyebrow','.page-hero h1','.page-hero p','.split > div','.cta h2','.cta p','.cta .btn','.signoff'];
+    var nodes=[];sel.forEach(function(q){document.querySelectorAll(q).forEach(function(n){if(!n.classList.contains('reveal')){n.classList.add('reveal');nodes.push(n);}});});
+    nodes.forEach(function(n){var s=Array.prototype.filter.call(n.parentNode.children,function(c){return c.classList.contains('reveal');});n.style.transitionDelay=(Math.min(s.indexOf(n),6)*0.08)+'s';});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+    nodes.forEach(function(n){io.observe(n);});
+    function cu(el){var to=+el.dataset.to,fr=+(el.dataset.from||0),d=1500,t0=null;function s(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/d,1),e=1-Math.pow(1-p,3);el.textContent=Math.floor(fr+(to-fr)*e);if(p<1)requestAnimationFrame(s);else el.textContent=to;}requestAnimationFrame(s);}
+    var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){cu(e.target);cio.unobserve(e.target);}})},{threshold:0.6});
+    document.querySelectorAll('.count').forEach(function(el){cio.observe(el);});
+    var mf=document.querySelectorAll('.hero-motif, .page-hero .motif-fill');var tk=false;
+    function px(){var y=window.scrollY;mf.forEach(function(m){var sc=1+Math.min(y/4000,0.08);m.style.transform='translateY('+(y*0.12)+'px) scale('+sc+')';});tk=false;}
+    window.addEventListener('scroll',function(){if(!tk){requestAnimationFrame(px);tk=true;}},{passive:true});
+    if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+      document.querySelectorAll('.media, .form-card, .prod-card, .facts').forEach(function(c){
+        c.addEventListener('mousemove',function(ev){var r=c.getBoundingClientRect();var a=(ev.clientX-r.left)/r.width-0.5,b=(ev.clientY-r.top)/r.height-0.5;c.style.transform='perspective(1000px) rotateX('+(-b*3.5)+'deg) rotateY('+(a*3.5)+'deg) translateY(-4px)';});
+        c.addEventListener('mouseleave',function(){c.style.transform='';});
       });
     }
   })();
