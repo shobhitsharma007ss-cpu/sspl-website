@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — SSPL India | Knitted Garment Manufacturer Since 1989</title>
-  <meta name="description" content="Shatabdi Synthetics (SSPL India) — a vertically integrated knitted fabric and garment manufacturer in Kanpur. Our story, capabilities and leadership.">
+  <title>About SSPL India | Knitted Garment Manufacturer in Kanpur</title>
+  <meta name="description" content="Learn about Shatabdi Synthetics (SSPL India) — a vertically integrated knitted fabric and garment manufacturer in Kanpur, India, exporting to 20+ countries since 1989.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,7 +27,7 @@
 
 
   <div class="page-hero">
-    <div class="motif-fill motif"></div>
+    <div class="motif-fill motif"></div><div class="section-deco deco-wave deco-on-dark" data-parallax="0.18" style="left:-160px;bottom:-200px;width:420px;height:420px;opacity:.4;"></div>
     <div class="wrap">
       <div class="eyebrow plain" style="color:var(--green)">Our Story</div>
       <h1>Built over three decades, <em>under one roof.</em></h1>
@@ -64,11 +64,11 @@
 
   <section>
     <div class="wrap">
-      <div class="sec-head"><div class="eyebrow">What we manufacture</div><h2 class="display-2">Knitted fabric, garments &amp; workwear.</h2></div>
+      <div class="sec-head"><div class="eyebrow">What we manufacture</div><h2 class="display-2">Knitted fabric, garments and workwear.</h2></div>
       <div class="rows">
         <div class="row"><div class="rnum">01</div><h3>Knitted Garments</h3><p>T-shirts, polos, leggings, loungewear and activewear for men, women and kids — plus custom private label.</p></div>
         <div class="row"><div class="rnum">02</div><h3>Cotton Fabrics</h3><p>Interlock, jersey, pique, rib and fleece in custom GSM and colours, with eco-friendly dyeing and high colourfastness.</p></div>
-        <div class="row"><div class="rnum">03</div><h3>Workwear &amp; Uniforms</h3><p>For industrial, security, logistics, hospitality and healthcare — built for performance and durability.</p></div>
+        <div class="row"><div class="rnum">03</div><h3>Workwear and Uniforms</h3><p>For industrial, security, logistics, hospitality and healthcare — built for performance and durability.</p></div>
       </div>
     </div>
   </section>
@@ -77,8 +77,8 @@
     <div class="wrap">
       <div class="sec-head"><div class="eyebrow">Leadership</div><h2 class="display-2">The family behind SSPL.</h2></div>
       <div class="rows">
-        <div class="row"><div class="rnum">—</div><h3>BP Gupta</h3><p>Managing Director &amp; CEO — years of commercial leadership that have brought the company to where it stands today.</p></div>
-        <div class="row"><div class="rnum">—</div><h3>Rohit Gupta</h3><p>Director &amp; Co-Founder — the visionary driving product development, marketing and customer experience.</p></div>
+        <div class="row"><div class="rnum">—</div><h3>BP Gupta</h3><p>Managing Director and CEO — years of commercial leadership that have brought the company to where it stands today.</p></div>
+        <div class="row"><div class="rnum">—</div><h3>Rohit Gupta</h3><p>Director and Co-Founder — the visionary driving product development, marketing and customer experience.</p></div>
         <div class="row"><div class="rnum">—</div><h3>Aryan Gupta</h3><p>Director, Production — mentors the in-house team and oversees fabric and garment production end to end.</p></div>
         <div class="row"><div class="rnum">—</div><h3>Rajesh Gupta</h3><p>Director, Sales — deep market expertise, building partnerships that grow brands over the long term.</p></div>
       </div>
@@ -103,7 +103,7 @@
         <iframe class="footer-map" src="https://maps.google.com/maps?q=UPSIDC+INDUSTRIAL+AREA+TEXTILE+ZONE,+ROOMA,+UTTAR+PRADESH&t=m&z=13&output=embed" loading="lazy"></iframe>
       </div>
       <div class="footer-col"><h5>Explore</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="products.html">Products</a></li><li><a href="services.html">Services</a></li><li><a href="blogs.html">Blogs</a></li><li><a href="faq.html">FAQs</a></li></ul></div>
-      <div class="footer-col"><h5>Capabilities</h5><ul><li><a href="services.html">Knitting</a></li><li><a href="services.html">Dyeing &amp; Finishing</a></li><li><a href="services.html">Garment Manufacturing</a></li><li><a href="services.html">Job Work</a></li></ul></div>
+      <div class="footer-col"><h5>Capabilities</h5><ul><li><a href="services.html">Knitting</a></li><li><a href="services.html">Dyeing and Finishing</a></li><li><a href="services.html">Garment Manufacturing</a></li><li><a href="services.html">Job Work</a></li></ul></div>
       <div class="footer-col"><h5>Visit / Write</h5><address>C-22-23 Textile Zone<br>UPSIDC Area, Rooma<br>Kanpur 209402, India<br><br><a href="mailto:shatabdisynthetics@gmail.com">shatabdisynthetics@gmail.com</a></address></div>
     </div>
     <div class="footer-bottom"><span>© 2025 SHATABDI SYNTHETICS PVT. LTD.</span><span>KANPUR · INDIA · EST. 1989</span></div>
@@ -138,6 +138,29 @@
         c.addEventListener('mouseleave',function(){c.style.transform='';});
       });
     }
+  })();
+  </script>
+  <script>
+  (function(){
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var items=[].slice.call(document.querySelectorAll('[data-parallax]'));
+    if(!items.length) return;
+    var ticking=false;
+    function update(){
+      var vh=window.innerHeight;
+      for(var i=0;i<items.length;i++){
+        var el=items[i], sp=parseFloat(el.getAttribute('data-parallax'))||0.12;
+        var r=el.getBoundingClientRect();
+        if(r.bottom<-200||r.top>vh+200) continue;
+        var off=(r.top+r.height/2)-vh/2;
+        el.style.transform='translate3d(0,'+(-off*sp).toFixed(1)+'px,0)';
+      }
+      ticking=false;
+    }
+    function onScroll(){ if(!ticking){ requestAnimationFrame(update); ticking=true; } }
+    window.addEventListener('scroll',onScroll,{passive:true});
+    window.addEventListener('resize',onScroll,{passive:true});
+    update();
   })();
   </script>
 </body>

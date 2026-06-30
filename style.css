@@ -433,3 +433,50 @@ nav.scrolled { box-shadow: var(--shadow-soft); }
   .footer-cta { padding: 32px 26px; }
   .wa { right: 16px; bottom: 16px; width: 54px; height: 54px; }
 }
+
+/* =============================================
+   v3.3 — SEO long-form content block (quiet)
+   ============================================= */
+.seo { background: #e9e6e1; border-top: 1px solid var(--line); padding: 90px 0; }
+.seo .wrap { max-width: 1080px; }
+.seo .eyebrow { margin-bottom: 26px; }
+.seo h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(28px,3.4vw,44px); letter-spacing: -0.015em; line-height: 1.08; margin-bottom: 22px; max-width: 24ch; }
+.seo h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; margin: 36px 0 10px; }
+.seo p { font-size: 15.5px; line-height: 1.75; color: var(--stone); max-width: 70ch; margin-bottom: 14px; }
+.seo .cols { columns: 2; column-gap: 56px; margin-top: 8px; }
+.seo .cols p { break-inside: avoid; }
+.seo a.inline { color: var(--forest); text-decoration: none; border-bottom: 1px solid rgba(14,86,54,0.35); }
+.seo a.inline:hover { border-color: var(--forest); }
+@media (max-width: 800px){ .seo .cols { columns: 1; } .seo { padding: 64px 0; } }
+
+/* =============================================
+   v3.4 — client tweaks: no blur, no italics
+   ============================================= */
+/* remove the blur-in from reveals (keep fade + slide) */
+.reveal, .reveal-stagger > * { filter: none !important; }
+.reveal.in, .reveal-stagger.in > * { filter: none !important; }
+/* set all italic display upright (keep colour emphasis) */
+em, em.accent, .serif-italic,
+.hero h1 em, .page-hero h1 em, .cta h2 em,
+.quote .q, .statement .q { font-style: normal !important; }
+
+/* =============================================
+   v3.5 — parallax depth layers (quiet)
+   ============================================= */
+.has-deco { position: relative; overflow: hidden; }
+.has-deco > .wrap { position: relative; z-index: 1; }
+.section-deco {
+  position: absolute; z-index: 0; pointer-events: none;
+  background-repeat: no-repeat; background-size: contain;
+  will-change: transform; opacity: 0.5;
+}
+.deco-wave {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cg fill='none' stroke='%2300aa45' stroke-width='2' opacity='0.45'%3E%3Ccircle cx='300' cy='300' r='70'/%3E%3Ccircle cx='300' cy='300' r='120'/%3E%3Ccircle cx='300' cy='300' r='170'/%3E%3Ccircle cx='300' cy='300' r='220'/%3E%3Ccircle cx='300' cy='300' r='270'/%3E%3C/g%3E%3C/svg%3E");
+}
+.deco-forest .deco-wave, .deco-on-dark {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cg fill='none' stroke='%2300aa45' stroke-width='2' opacity='0.35'%3E%3Ccircle cx='300' cy='300' r='70'/%3E%3Ccircle cx='300' cy='300' r='120'/%3E%3Ccircle cx='300' cy='300' r='170'/%3E%3Ccircle cx='300' cy='300' r='220'/%3E%3Ccircle cx='300' cy='300' r='270'/%3E%3C/g%3E%3C/svg%3E");
+}
+@media (prefers-reduced-motion: reduce){ .section-deco { display: none; } }
+@media (max-width: 700px){ .section-deco { opacity: 0.32; } }
+
+html { overflow-x: hidden; }
